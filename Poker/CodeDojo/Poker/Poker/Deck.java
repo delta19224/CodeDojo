@@ -1,6 +1,6 @@
 package Poker;
 
-import java.util.Optional;
+import java.util.Collections;
 import java.util.Stack;
 
 public class Deck {
@@ -20,14 +20,19 @@ public class Deck {
 				deck.push(Card.getCard(rank, suit));
 			}
 		}
+		Collections.shuffle(deck);
 		return deck;
 	}
 	
-	public Optional<Card> deal(){
-		if(deck.isEmpty()){
-			return Optional.empty();
-		}else{
-			return Optional.of(deck.pop());
-		}
+	public Card get(int pos){
+		return deck.get(pos);
+	}
+	
+	public Stack<Card> getDeck(){
+		return deck;
+	}
+	
+	public Card deal(){
+		return deck.pop();
 	}
 }

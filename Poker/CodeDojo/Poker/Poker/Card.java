@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Card {
-	//this is a test
+	
 	final Rank rank;
 	final Suit suit;
 	
@@ -29,7 +29,7 @@ public class Card {
 	}
 	
 	private static String cardKey(Rank rank, Suit suit) {
-		return (rank + " of " + suit);
+		return (rank + " of" + suit);
 	}	
 	
 	public static Card getCard(Rank rank, Suit suit) {
@@ -42,9 +42,13 @@ public class Card {
 			throw new RuntimeException("Invalid Card: " + rank + suit);
 		}		
 	}
+	
+	public int getRankValue(){
+		return rank.getRankValue();
+	}
 
 	@Override
 	public String toString(){
-		return String.format("%s of %s", this.rank, this.suit);
+		return String.format("%s%s", this.rank.getRankValue(), this.suit.getSuitValue());
 	}
 }
