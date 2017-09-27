@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Card {
-	
+	//this is a test
 	final Rank rank;
 	final Suit suit;
 	
